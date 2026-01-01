@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam - FAQ</title>
+    <link rel="icon" href="/images/tab_icon.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JQUERY -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <!-- FAQ CSS -->
+    <link rel="stylesheet" href="/css/faq.css">
+    <!-- Scripts -->
+    <script defer src="/script/menu_buttons.js"></script>
+    <script defer src="/script/faq.js"></script>
+</head>
+<body>
+    <!-- Menu Toggle Button -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Header Icons -->
+    <div class="header-icons">
+        <button class="icon-btn" aria-label="Toggle theme">
+            <i class="bi bi-sun"></i>
+        </button>
+        <button class="icon-btn" aria-label="Sound">
+            <i class="bi bi-volume-up"></i>
+        </button>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3><i class="bi bi-list"></i> Menu</h3>
+            <button class="close-btn" id="closeBtn" aria-label="Close menu">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div class="nav-buttons">
+            <a href="/html/index_no_load.html" class="nav-btn">
+                <i class="bi bi-house-door"></i>
+                <span>Home</span>
+            </a>
+            <a href="/html/aboutme.html" class="nav-btn">
+                <i class="bi bi-person"></i>
+                <span>About me</span>
+            </a>
+            <a href="/works" class="nav-btn">
+                <i class="bi bi-briefcase"></i>
+                <span>Works</span>
+            </a>
+            <a href="/html/faq.html" class="nav-btn active">
+                <i class="bi bi-question-circle"></i>
+                <span>FAQ</span>
+            </a>
+            <a href="/contacts" class="nav-btn">
+                <i class="bi bi-envelope"></i>
+                <span>Contacts</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">FREQUENTLY ASKED QUESTIONS</h1>
+
+            <div class="faq-list">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Are your commissions open?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Currently, my commissions are closed. Please check back later or follow my social media for updates on when they will reopen!</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What's your setup?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>I use a Wacom tablet for digital illustration and work primarily with software like Clip Studio Paint and Adobe Photoshop. For game development, I use Unity and Visual Studio Code.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you use references in your illustrations?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Using references is an essential part of creating accurate and detailed artwork. I use references for poses, lighting, anatomy, and various other elements to ensure quality in my illustrations.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>can I repost your work?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Please do not repost my work without permission. If you'd like to share it, please link back to my original post or ask me first. I appreciate you respecting my work!</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Who is the girl in your profile picture?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>That's one of my original characters! She's a character I designed for a personal project I'm working on.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Are you single?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>That's a personal question! Let's keep the focus on my work and projects. 😊</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What's your favorite game?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>My favorite game is Blue Archive.</p>
+                        <p>Other games I like playing is Dying Light, Left 4 Dead, Surroundead, Project Zomboid, State of Decay 2, Company of Heroes and Minecraft.</p>
+                        <p>And yes most of it are zombie games because i like playing zombie games.</p>
+                    </div>
+                </div>
+
+
+                
+            </div>
+        </div>
+    </main>
+
+    
+</body>

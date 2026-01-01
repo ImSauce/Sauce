@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam - Contacts</title>
+    <link rel="icon" href="/images/tab_icon.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JQUERY -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <!-- Scripts -->
+    <script defer src="/script/menu_buttons.js"></script>
+    <!-- Contacts CSS -->
+    <link rel="stylesheet" href="/css/contacts.css">
+</head>
+<body>
+    <!-- Menu Toggle Button -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <i class="bi bi-list"></i>
+    </button>
+    
+    <!-- Header Icons -->
+    <div class="header-icons">
+        <button class="icon-btn" aria-label="Toggle theme">
+            <i class="bi bi-sun"></i>
+        </button>
+        <button class="icon-btn" aria-label="Sound">
+            <i class="bi bi-volume-up"></i>
+        </button>
+    </div>
+    
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3><i class="bi bi-list"></i> Menu</h3>
+            <button class="close-btn" id="closeBtn" aria-label="Close menu">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div class="nav-buttons">
+            <a href="/html/index_no_load.html" class="nav-btn">
+                <i class="bi bi-house-door"></i>
+                <span>Home</span>
+            </a>
+            <a href="/html/aboutme.html" class="nav-btn">
+                <i class="bi bi-person"></i>
+                <span>About me</span>
+            </a>
+            <a href="/works" class="nav-btn">
+                <i class="bi bi-briefcase"></i>
+                <span>Works</span>
+            </a>
+            <a href="/html/faq.html" class="nav-btn">
+                <i class="bi bi-question-circle"></i>
+                <span>FAQ</span>
+            </a>
+            <a href="/html/contacts.html" class="nav-btn active">
+                <i class="bi bi-envelope"></i>
+                <span>Contacts</span>
+            </a>
+        </div>
+    </nav>
+    
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">CONTACTS</h1>
+            
+            <div class="contacts-content">
+                <!-- Contact Links Section -->
+                <div class="contact-links">
+                    <a href="https://github.com/ImSauce" class="contact-item" target="_blank" rel="noopener noreferrer">
+                        <div class="contact-icon">
+                            <i class="bi bi-github"></i>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-value">ImSauce</span>
+                        </div>
+                    </a>
+
+                    <a href="https://instagram.com/samsamsasama" class="contact-item" target="_blank" rel="noopener noreferrer">
+                        <div class="contact-icon">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">Instagram</span>
+                            <span class="contact-value">samsamsasama</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.facebook.com/samueljames.cinco.5/" class="contact-item" target="_blank" rel="noopener noreferrer">
+                        <div class="contact-icon">
+                            <i class="bi bi-facebook"></i>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">Facebook</span>
+                            <span class="contact-value">Samuel James Cinco</span>
+                        </div>
+                    </a>
+
+                    <a href="https://twitter.com/imsauce_" class="contact-item" target="_blank" rel="noopener noreferrer">
+                        <div class="contact-icon">
+                            <i class="bi bi-twitter-x"></i>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">X (Twitter)</span>
+                            <span class="contact-value">imsauce_</span>
+                        </div>
+                    </a>
+
+                    <a href="https://discord.com/users/imsauce" class="contact-item" target="_blank" rel="noopener noreferrer">
+                        <div class="contact-icon">
+                            <i class="bi bi-discord"></i>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">Discord</span>
+                            <span class="contact-value">imsauce</span>
+                        </div>
+                    </a>
+
+                    <a href="mailto:samueljamescinco@gmail.com" class="contact-item">
+                        <div class="contact-icon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+                        <div class="contact-info">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">samueljamescinco@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <!-- Note -->
+                    <div class="contact-note">
+                        <p>🍵 you can contact me through email directly since I dont really check my social media very much</p>
+                    </div>
+                </div>
+
+                <!-- Character Image Container -->
+                <div class="character-container">
+                    <img src="/images/contacts_character.png" alt="Character" class="character-image">
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
