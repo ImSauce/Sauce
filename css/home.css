@@ -30,6 +30,8 @@
             overflow-x: hidden;
             min-height: 100vh;
             position: relative;
+            user-select: none;
+            caret-color: transparent;
         }
 
         /* Header Icons */

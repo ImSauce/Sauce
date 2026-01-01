@@ -1,10 +1,13 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const loaderWrapper = document.querySelector(".loader_wrapper");
+document.addEventListener("DOMContentLoaded", () => {
+    const loader = document.querySelector(".loader_wrapper");
     const body = document.body;
 
-    // Fake loading screen: fade out after 3 seconds
     setTimeout(() => {
-        loaderWrapper.classList.add("fade-out"); // fade out animation
-        body.classList.remove("preload");        // enable scrolling
-    }, 3000); // 3000ms = 3 seconds
+        loader.classList.add("wave-exit"); // start wave drop
+
+        setTimeout(() => {
+            loader.remove();               // kill loader
+            body.classList.remove("preload");
+        }, 1000); // match CSS transition
+    }, 1200); // edit the speed of which the wave in the loader will go down type shi
 });
