@@ -283,7 +283,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     .illustrations-grid {
         column-count: 3;
         column-gap: 10px;
@@ -291,7 +291,7 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 400px) {
     .illustrations-grid {
         column-count: 2;
         overflow: hidden;
