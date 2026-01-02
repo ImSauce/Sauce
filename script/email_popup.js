@@ -32,7 +32,7 @@ emailLink.addEventListener("click", (e) => {
                 </div>
                 <div class="input-group">
                     <textarea name="message" rows="5" required></textarea>
-                    <label>Message</label>
+                    <label>Message</label> 
                 </div>
                 <button type="submit">Send</button>
 
