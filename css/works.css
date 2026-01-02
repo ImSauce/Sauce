@@ -278,20 +278,20 @@ body {
 
 @media (max-width: 1200px) {
     .illustrations-grid {
-        column-count: 3;
+        column-count: 4;
     }
 }
 
 @media (max-width: 768px) {
     .illustrations-grid {
-        column-count: 2;
+        column-count: 3;
         column-gap: 15px;
     }
 }
 
 @media (max-width: 480px) {
     .illustrations-grid {
-        column-count: 1;
+        column-count: 3;
     }
 }
 
