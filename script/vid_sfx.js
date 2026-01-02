@@ -15,9 +15,6 @@ volumeSlider.addEventListener("input", () => {
     }
 });
 
-// optional: unmute on first interaction
-featuredVideo.muted = false;
-
 
 const video = document.querySelector(".carousel-slide.featured video");
 const volumeControl = document.createElement("div");
