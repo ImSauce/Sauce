@@ -96,7 +96,7 @@ showPlayBtn();
 // create spinner overlay
 const spinner = document.createElement("div");
 spinner.classList.add("video-spinner");
-spinner.innerHTML = `<i class="bi bi-arrow-repeat spin-icon"></i>`; // using bootstrap icon
+spinner.innerHTML = `<i class="bi bi-arrow-repeat spin-icon"></i>`; // green & spinning now
 videoContainer.appendChild(spinner);
 
 

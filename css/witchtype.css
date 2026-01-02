@@ -852,20 +852,19 @@ body {
     transform: scale(1.2);
 }
 
-
-
 .video-spinner {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 30; /* above volume/play */
-    pointer-events: none; /* clicks pass through */
+    z-index: 30;
+    pointer-events: none;
 }
 
 .spin-icon {
-    font-size: 2rem;
-    color: white;
+    font-size: 2.5rem;
+    color: #4BCD79; /* bright green */
+    display: inline-block; /* make transform/animation work */
     animation: spin 1s linear infinite;
 }
 
