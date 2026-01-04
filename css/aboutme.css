@@ -390,7 +390,7 @@
 
 
         .easter-item {
-            display: none;
+            display: none !important;
             opacity: 0;
             transition: opacity 0.25s ease;
         }
