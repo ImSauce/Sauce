@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 item.style.opacity = "0";
                 setTimeout(() => {
                     item.style.display = "none";
-                }, 350); // match the CSS transition duration
+                }, 550); // match the CSS transition duration
             }
         });
     });
