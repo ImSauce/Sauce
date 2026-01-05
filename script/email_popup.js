@@ -16,14 +16,16 @@ emailLink.addEventListener("click", (e) => {
             <h2>Send me a message! 🐢</h2>
             <form id="contactForm" action="https://formsubmit.co/d48f74fa46b6a08789394d79e5f6555d" method="POST">
                 <input type="hidden" name="_subject" value="New message from ur personal website!">
-
                 <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://imsauce.github.io/sauce/html/thanks.html">
+
                 <div class="input-group">
                     <input type="text" name="name" required>
                     <label>Name</label>
                 </div>
                 <div class="input-group">
-                    <input type="email" name="email" required>
+                    <input type="email" name="_replyto" required>
                     <label>Email</label>
                 </div>
                 <div class="input-group">
@@ -31,17 +33,10 @@ emailLink.addEventListener("click", (e) => {
                     <label>Subject</label>
                 </div>
                 <div class="input-group">
-                    <textarea name="message" rows="5" required></textarea>
+                    <textarea name="message" rows="5" maxlength="1000" required></textarea>
                     <label>Message</label> 
                 </div>
                 <button type="submit">Send</button>
-
-                <input type="hidden" name="_next" value="https://imsauce.github.io/Sauce/html/thanks.html">
-
-
-                
-
-                
             </form>
         `;
 
@@ -59,12 +54,6 @@ emailLink.addEventListener("click", (e) => {
             input.addEventListener("input", () => {
                 input.classList.toggle("has-value", !!input.value);
             });
-        });
-
-        // Form submission - let it submit naturally to formsubmit.co
-        formWrapper.querySelector("form").addEventListener("submit", ev => {
-            // Remove the preventDefault to allow actual form submission
-            // The form will now POST to formsubmit.co
         });
     }
 
