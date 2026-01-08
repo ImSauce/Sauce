@@ -1,7 +1,7 @@
 const track = document.querySelector('.fluid-track');
 let isDragging = false;
 let startX, scrollLeft;
-let speed = 0.2; // normal auto-scroll speed
+let speed = 0.2; // default auto-scroll speed
 let currentTranslate = 0;
 
 function animate() {
@@ -17,7 +17,7 @@ function animate() {
 
 animate();
 
-// --- Drag to scroll ---
+// Scroll Dragging
 track.addEventListener('mousedown', (e) => {
     isDragging = true;
     startX = e.pageX;
@@ -39,7 +39,7 @@ track.addEventListener('mouseleave', () => {
     isDragging = false;
 });
 
-// touch support
+// touch dragging for mobile
 track.addEventListener('touchstart', (e) => {
     isDragging = true;
     startX = e.touches[0].pageX;
@@ -57,7 +57,7 @@ track.addEventListener('touchend', () => {
     isDragging = false;
 });
 
-// --- clickable images ---
+// make my game images clickable 
 document.querySelectorAll('.fluid-slide img').forEach(img => {
     img.addEventListener('click', () => {
         const link = img.dataset.link;
