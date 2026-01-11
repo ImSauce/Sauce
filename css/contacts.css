@@ -38,31 +38,6 @@
             caret-color: transparent;
         }
 
-        .main-content {
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out;
-        }
-
-
-        .main-content.show {
-            opacity: 1;
-        }
-
-        .page-exit-animation .main-content {
-            opacity: 0;
-        }
-
-
-
-        #page-wrapper {
-            opacity: 1;
-            transition: opacity 1.5s ease;
-        }
-
-        #page-wrapper.page-exit-animation {
-            opacity: 0;
-        }
-
 
         /* Header Icons */
         .header-icons {
@@ -226,12 +201,25 @@
 
         /* Main Content */
         .main-content {
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
             padding: 100px 20px 180px;
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
         }
+
+        .main-content.show {
+            opacity: 1;
+        }
+
+        /* When leaving page */
+        .page-exit-animation .main-content {
+            opacity: 0;
+        }
+
+
 
         .container {
             width: 100%;
