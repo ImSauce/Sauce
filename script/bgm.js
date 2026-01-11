@@ -1,10 +1,10 @@
 const pageMusic = {
     "home.html": "home_bgm.mp3",   // main page BGM
+    "home_.html": "../audio/home_bgm.mp3",
     "aboutme.html": "../audio/aboutme_bgm.mp3",
     "works.html": "../audio/works_bgm.mp3",
     "faq.html": "../audio/faq_bgm.mp3",
     "contacts.html": "../audio/contacts_bgm.mp3",
-    "home_.html": "../audio/home_bgm.mp3",
     "thanks.html": "../audio/thanks_bgm.mp3",
 };
 
@@ -18,7 +18,7 @@ bgMusic.loop = true;
 bgMusic.volume = 0; // start at 0 for fade in
 
 // fade in function
-function fadeIn(audio, targetVolume = 0.2, duration = 2000) {
+function fadeIn(audio, targetVolume = 0.05, duration = 2000) {
     const stepTime = 50;
     const steps = duration / stepTime;
     const volumeStep = targetVolume / steps;
@@ -107,6 +107,45 @@ window.addEventListener("pageshow", (event) => {
 
 
 
+// ======================
+// SFX SYSTEM
+// ======================
+
+// cache for audio objects
+const sfxCache = {};
+
+// play sfx helper
+function playSFX(src, volume = 0.5) {
+    if (!src) return;
+
+    if (!sfxCache[src]) {
+        const audio = new Audio(src);
+        audio.volume = volume;
+        sfxCache[src] = audio;
+    }
+
+    const sfx = sfxCache[src];
+    sfx.currentTime = 0; // rapid fire support
+    sfx.play().catch(() => {});
+}
+
+// attach sfx to elements
+document.addEventListener("DOMContentLoaded", () => {
+    // hover sfx
+    document.querySelectorAll("[data-sfx-hover]").forEach(el => {
+        el.addEventListener("mouseenter", () => {
+            playSFX(el.dataset.sfxHover, parseFloat(el.dataset.sfxVolume) || 0.5);
+        });
+    });
+
+    // click sfx
+    document.querySelectorAll("[data-sfx-click]").forEach(el => {
+        el.addEventListener("click", () => {
+            playSFX(el.dataset.sfxClick, parseFloat(el.dataset.sfxVolume) || 0.5);
+        });
+    });
+
+});
 
 
 

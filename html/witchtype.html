@@ -19,6 +19,7 @@
     <script defer src="../script/menu_buttons.js"></script>
     <script defer src="../script/witchtype.js"></script>
     <script defer src="../script/vid_sfx.js"></script>
+    <script defer src="../script/bgm.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="../css/witchtype.css">
 
@@ -26,7 +27,7 @@
 <body>
     <div id="page-wrapper">
         <!-- Menu Toggle Button (for mobile) -->
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" data-sfx-click="../audio/menu_toggle_open_sfx.mp3">
             <i class="bi bi-list"></i>
         </button>
 
@@ -34,28 +35,28 @@
         <nav class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <h3><i class="bi bi-list"></i> Menu</h3>
-                <button class="close-btn" id="closeBtn" aria-label="Close menu">
+                <button class="close-btn" id="closeBtn" aria-label="Close menu" data-sfx-click="../audio/menu_toggle_close_sfx.mp3">
                     <i class="bi bi-x-lg"></i>
                 </button>
             </div>
             <div class="nav-buttons">
-                <a href="../html/home_.html" class="nav-btn">
+                <a href="../html/home_.html" class="nav-btn" data-sfx-hover="../audio/hover_sfx.mp3" data-sfx-click="../audio/click_sfx.mp3">
                     <i class="bi bi-house-door"></i>
                     <span>Home</span>
                 </a>
-                <a href="../html/aboutme.html" class="nav-btn">
+                <a href="../html/aboutme.html" class="nav-btn" data-sfx-hover="../audio/hover_sfx.mp3" data-sfx-click="../audio/click_sfx.mp3">
                     <i class="bi bi-person"></i>
                     <span>About me</span>
                 </a>
-                <a href="../html/works.html" class="nav-btn active">
+                <a href="../html/works.html" class="nav-btn active" data-sfx-hover="../audio/hover_sfx.mp3" data-sfx-click="../audio/click_sfx.mp3">
                     <i class="bi bi-briefcase"></i>
                     <span>Works</span>
                 </a>
-                <a href="../html/faq.html" class="nav-btn">
+                <a href="../html/faq.html" class="nav-btn" data-sfx-hover="../audio/hover_sfx.mp3" data-sfx-click="../audio/click_sfx.mp3">
                     <i class="bi bi-question-circle"></i>
                     <span>FAQ</span>
                 </a>
-                <a href="../html/contacts.html" class="nav-btn">
+                <a href="../html/contacts.html" class="nav-btn" data-sfx-hover="../audio/hover_sfx.mp3" data-sfx-click="../audio/click_sfx.mp3">
                     <i class="bi bi-envelope"></i>
                     <span>Contacts</span>
                 </a>
@@ -73,7 +74,7 @@
             <header class="game-header">
                 <h1 class="game-title">WITCHTYPE: The Ashen Witch</h1>
                 <a href="https://github.com/ImSauce/WitchType/releases/download/0.7.2-beta/WitchType.v0.7.2-windows.zip"
-                class="download-btn-header">
+                class="download-btn-header" data-sfx-hover="../audio/hover_sfx.mp3" data-sfx-click="../audio/click_sfx.mp3">
                     <span>Download</span>
                     <i class="bi bi-download"></i>
                 </a>
@@ -134,25 +135,25 @@
                     <div class="thumbnail-strip-wrapper">
                         <div class="thumbnail-strip">
                             <div class="thumbnail active" data-index="0">
-                                <img src="../images/screenshots/W7.png" alt="Thumb 0">
+                                <img src="../images/screenshots/W7.png" alt="Thumb 0" data-sfx-hover="../audio/hover_sfx.mp3" data-sfx-click="../audio/menu_toggle_open_sfx.mp3"  >
                             </div>
                             <div class="thumbnail" data-index="1">
-                                <img src="../images/screenshots/W1.png" alt="Thumb 1">
+                                <img src="../images/screenshots/W1.png" alt="Thumb 1" data-sfx-hover="../audio/hover_sfx.mp3" data-sfx-click="../audio/menu_toggle_open_sfx.mp3"  >
                             </div>
                             <div class="thumbnail" data-index="2">
-                                <img src="../images/screenshots/W2.png" alt="Thumb 2">
+                                <img src="../images/screenshots/W2.png" alt="Thumb 2" data-sfx-hover="../audio/hover_sfx.mp3" data-sfx-click="../audio/menu_toggle_open_sfx.mp3"  > 
                             </div>
                             <div class="thumbnail" data-index="3">
-                                <img src="../images/screenshots/W3.png" alt="Thumb 3">
+                                <img src="../images/screenshots/W3.png" alt="Thumb 3" data-sfx-hover="../audio/hover_sfx.mp3" data-sfx-click="../audio/menu_toggle_open_sfx.mp3"  >
                             </div>
                             <div class="thumbnail" data-index="4">
-                                <img src="../images/screenshots/W4.png" alt="Thumb 4">
+                                <img src="../images/screenshots/W4.png" alt="Thumb 4" data-sfx-hover="../audio/hover_sfx.mp3" data-sfx-click="../audio/menu_toggle_open_sfx.mp3"  >
                             </div>
                             <div class="thumbnail" data-index="5">
-                                <img src="../images/screenshots/W5.png" alt="Thumb 5">
+                                <img src="../images/screenshots/W5.png" alt="Thumb 5" data-sfx-hover="../audio/hover_sfx.mp3" data-sfx-click="../audio/menu_toggle_open_sfx.mp3"  >
                             </div>
                             <div class="thumbnail" data-index="6">
-                                <img src="../images/screenshots/W6.png" alt="Thumb 6">
+                                <img src="../images/screenshots/W6.png" alt="Thumb 6" data-sfx-hover="../audio/hover_sfx.mp3" data-sfx-click="../audio/menu_toggle_open_sfx.mp3"  >
                             </div>
                         </div>
                     </div>
@@ -207,15 +208,15 @@
                             <div class="detail-item">
                                 <span class="detail-label">Genre:</span>
                                 <div class="genre-tags">
-                                    <span class="tag">Action</span>
-                                    <span class="tag">Adventure</span>
-                                    <span class="tag">Fantasy</span>
-                                    <span class="tag">2D</span>
-                                    <span class="tag">RPG</span>
-                                    <span class="tag">Story</span>
-                                    <span class="tag">Typing Game</span>
-                                    <span class="tag">Single Player</span>
-                                    <span class="tag">Early Access</span>
+                                    <span class="tag" data-sfx-hover="../audio/hover_sfx.mp3">Action</span>
+                                    <span class="tag" data-sfx-hover="../audio/hover_sfx.mp3">Adventure</span>
+                                    <span class="tag" data-sfx-hover="../audio/hover_sfx.mp3">Fantasy</span>
+                                    <span class="tag" data-sfx-hover="../audio/hover_sfx.mp3">2D</span>
+                                    <span class="tag" data-sfx-hover="../audio/hover_sfx.mp3">RPG</span>
+                                    <span class="tag" data-sfx-hover="../audio/hover_sfx.mp3">Story</span>
+                                    <span class="tag" data-sfx-hover="../audio/hover_sfx.mp3">Typing Game</span>
+                                    <span class="tag" data-sfx-hover="../audio/hover_sfx.mp3">Single Player</span>
+                                    <span class="tag" data-sfx-hover="../audio/hover_sfx.mp3">Early Access</span>
                                 </div>
                             </div>
                         </div>
