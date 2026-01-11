@@ -1,5 +1,5 @@
 const pageMusic = {
-    "home.html": "audio/home_bgm.mp3",   // main page BGM
+    "home.html": "home_bgm.mp3",   // main page BGM
     "aboutme.html": "../audio/aboutme_bgm.mp3",
     "works.html": "../audio/works_bgm.mp3",
     "faq.html": "../audio/faq_bgm.mp3",
