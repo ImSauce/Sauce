@@ -245,55 +245,37 @@
 
 
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const mainContent = document.querySelector(".main-content");
-        const pageWrapper = document.getElementById("page-wrapper");
+function showContent() {
+    const mainContent = document.querySelector(".main-content");
+    if (mainContent) {
+        mainContent.classList.add("show");
+    }
+}
 
-        // Fade-in on load
-        requestAnimationFrame(() => {
-            mainContent.style.opacity = 1;
-        });
+document.addEventListener("DOMContentLoaded", () => {
+    showContent();
 
-        // Intercept ALL internal links
-        document.body.addEventListener("click", (e) => {
-            const link = e.target.closest("a");
-
-            if (!link) return;
-
-            const href = link.getAttribute("href");
-
-            // ignore:
-            // - external links
-            // - new tab
-            // - anchors
-            if (
-                !href ||
-                href.startsWith("http") ||
-                link.target === "_blank" ||
-                href.startsWith("#")
-            ) return;
-
+    document.querySelectorAll(".nav-buttons a").forEach(link => {
+        link.addEventListener("click", (e) => {
             e.preventDefault();
 
-            // trigger fade
-            pageWrapper.classList.add("page-exit-animation");
+            document.body.classList.add("page-exit-animation");
 
             setTimeout(() => {
-                window.location.href = href;
+                window.location.href = link.href;
             }, 1500);
         });
     });
+});
 
-    window.addEventListener("pageshow", (event) => {
-    const mainContent = document.querySelector(".main-content");
-
-    // If page was restored from bfcache
+// 🔥 THIS IS THE IMPORTANT PART 🔥
+window.addEventListener("pageshow", (event) => {
     if (event.persisted) {
         document.body.classList.remove("page-exit-animation");
-        mainContent.style.opacity = "1";
+        showContent();
     }
 });
-    </script>
+</script>
 
 
 </body>

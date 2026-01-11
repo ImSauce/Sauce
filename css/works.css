@@ -45,6 +45,14 @@ body {
     transition: opacity 0.8s ease-in-out;
 }
 
+        .main-content.show {
+            opacity: 1;
+        }
+
+        .page-exit-animation .main-content {
+            opacity: 0;
+        }
+
 
 
 #page-wrapper {

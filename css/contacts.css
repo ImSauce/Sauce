@@ -44,6 +44,15 @@
         }
 
 
+        .main-content.show {
+            opacity: 1;
+        }
+
+        .page-exit-animation .main-content {
+            opacity: 0;
+        }
+
+
 
         #page-wrapper {
             opacity: 1;

@@ -187,41 +187,37 @@
     </div>
 
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const mainContent = document.querySelector(".main-content");
-        const navButtons = document.querySelectorAll(".nav-buttons a");
-        const pageWrapper = document.getElementById("page-wrapper");
+function showContent() {
+    const mainContent = document.querySelector(".main-content");
+    if (mainContent) {
+        mainContent.classList.add("show");
+    }
+}
 
-        // Fade-in on load
-        setTimeout(() => {
-            mainContent.style.opacity = 1;
-        }, 50);
+document.addEventListener("DOMContentLoaded", () => {
+    showContent();
 
-        navButtons.forEach(link => {
-            link.addEventListener("click", (e) => {
-                e.preventDefault();
+    document.querySelectorAll(".nav-buttons a").forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
 
-                // Fade out wrapper
-                pageWrapper.classList.add("page-exit-animation");
+            document.body.classList.add("page-exit-animation");
 
-                // Redirect after fade
-                setTimeout(() => {
-                    window.location.href = link.href;
-                }, 1500);
-            });
+            setTimeout(() => {
+                window.location.href = link.href;
+            }, 1500);
         });
     });
+});
 
-    window.addEventListener("pageshow", (event) => {
-    const mainContent = document.querySelector(".main-content");
-
-    // If page was restored from bfcache
+// 🔥 THIS IS THE IMPORTANT PART 🔥
+window.addEventListener("pageshow", (event) => {
     if (event.persisted) {
         document.body.classList.remove("page-exit-animation");
-        mainContent.style.opacity = "1";
+        showContent();
     }
 });
-    </script>
+</script>
     
 </body>
 </html>
