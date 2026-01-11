@@ -1,11 +1,24 @@
+const pageMusic = {
+    "home.html": "../audio/home_bgm.mp3",   // main page BGM
+    "aboutme.html": "../audio/aboutme_bgm.mp3",
+    "works.html": "../audio/works_bgm.mp3",
+    "faq.html": "../audio/faq_bgm.mp3",
+    "contacts.html": "../audio/contacts_bgm.mp3",
+    "home_.html": "../audio/home_bgm.mp3",
+};
 
-const bgMusic = new Audio("../audio/home_bgm.mp3"); 
-bgMusic.loop = true; 
-bgMusic.volume = 0; 
+// detect current page
+const currentPage = window.location.pathname.split("/").pop();
+const bgMusic = new Audio(pageMusic[currentPage] || pageMusic["home.html"]);
 
+// Get current page filename
+const pathParts = window.location.pathname.split("/");
+bgMusic.loop = true;
+bgMusic.volume = 0; // start at 0 for fade in
 
+// fade in function
 function fadeIn(audio, targetVolume = 0.2, duration = 3000) {
-    const stepTime = 50; 
+    const stepTime = 50;
     const steps = duration / stepTime;
     const volumeStep = targetVolume / steps;
 
@@ -18,21 +31,143 @@ function fadeIn(audio, targetVolume = 0.2, duration = 3000) {
     }, stepTime);
 }
 
+// fade out function
+function fadeOut(audio, duration = 1000) {
+    const stepTime = 50;
+    const steps = duration / stepTime;
+    const volumeStep = audio.volume / steps;
 
-function playMusic() {
-    bgMusic.play()
-        .then(() => fadeIn(bgMusic)) 
-        .catch(() => {
-  
-            document.addEventListener(
-                "click",
-                () => {
-                    bgMusic.play().then(() => fadeIn(bgMusic));
-                },
-                { once: true } 
-            );
-        });
+    const fadeInterval = setInterval(() => {
+        if (audio.volume > 0) {
+            audio.volume = Math.max(audio.volume - volumeStep, 0);
+        } else {
+            clearInterval(fadeInterval);
+            audio.pause();
+        }
+    }, stepTime);
 }
 
+// Initialize music
+function initMusic() {
+    const musicAllowed = sessionStorage.getItem("musicAllowed");
 
-window.addEventListener("load", playMusic);
+    if (musicAllowed) {
+        bgMusic.play().then(() => fadeIn(bgMusic)).catch(() => {});
+    } else {
+        document.addEventListener("click", enableMusic, { once: true });
+    }
+}
+
+// Enable music on first click
+function enableMusic() {
+    sessionStorage.setItem("musicAllowed", "true");
+    bgMusic.play().then(() => fadeIn(bgMusic)).catch(() => {});
+}
+
+// Add nav button listeners
+document.addEventListener("DOMContentLoaded", () => {
+    initMusic();
+
+    const navButtons = document.querySelectorAll(".nav-buttons a");
+    navButtons.forEach(link => {
+        link.addEventListener("click", (e) => {
+            sessionStorage.setItem("musicAllowed", "true");
+            fadeOut(bgMusic, 500); // fade out before leaving page
+        });
+    });
+});
+
+// Make sure music plays on normal load AND back/forward cache
+window.addEventListener("pageshow", (event) => {
+    const musicAllowed = sessionStorage.getItem("musicAllowed");
+    if (musicAllowed) {
+        bgMusic.play().then(() => fadeIn(bgMusic)).catch(() => {});
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // bgm.js
+
+// const bgMusic = new Audio("../audio/home_bgm.mp3");
+// bgMusic.loop = true;
+// bgMusic.volume = 0; // start at 0 for fade in
+
+// // fade in function
+// function fadeIn(audio, targetVolume = 0.2, duration = 3000) {
+//     const stepTime = 50;
+//     const steps = duration / stepTime;
+//     const volumeStep = targetVolume / steps;
+
+//     const fadeInterval = setInterval(() => {
+//         if (audio.volume < targetVolume) {
+//             audio.volume = Math.min(audio.volume + volumeStep, targetVolume);
+//         } else {
+//             clearInterval(fadeInterval);
+//         }
+//     }, stepTime);
+// }
+
+// // fade out function
+// function fadeOut(audio, duration = 1000) {
+//     const stepTime = 50;
+//     const steps = duration / stepTime;
+//     const volumeStep = audio.volume / steps;
+
+//     const fadeInterval = setInterval(() => {
+//         if (audio.volume > 0) {
+//             audio.volume = Math.max(audio.volume - volumeStep, 0);
+//         } else {
+//             clearInterval(fadeInterval);
+//             audio.pause();
+//         }
+//     }, stepTime);
+// }
+
+// // Check if user has already "enabled" music
+// function initMusic() {
+//     const musicAllowed = sessionStorage.getItem("musicAllowed");
+
+//     if (musicAllowed) {
+//         bgMusic.play().then(() => fadeIn(bgMusic)).catch(() => {});
+//     } else {
+//         // wait for first click
+//         document.addEventListener("click", enableMusic, { once: true });
+//     }
+// }
+
+// // Enable music when user clicks anywhere or clicks nav
+// function enableMusic() {
+//     sessionStorage.setItem("musicAllowed", "true");
+//     bgMusic.play().then(() => fadeIn(bgMusic)).catch(() => {});
+// }
+
+// // Add event listener to nav buttons to remember music permission
+// document.addEventListener("DOMContentLoaded", () => {
+//     initMusic();
+
+//     const navButtons = document.querySelectorAll(".nav-buttons a");
+//     navButtons.forEach(link => {
+//         link.addEventListener("click", (e) => {
+//             sessionStorage.setItem("musicAllowed", "true"); // store permission
+//             // optional: fade out before leaving page
+//             fadeOut(bgMusic, 500);
+//         });
+//     });
+// });
