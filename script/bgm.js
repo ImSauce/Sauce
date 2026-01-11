@@ -1,5 +1,5 @@
 const pageMusic = {
-    "home.html": "../audio/home_bgm.mp3",   // main page BGM
+    "home.html": "audio/home_bgm.mp3",   // main page BGM
     "aboutme.html": "../audio/aboutme_bgm.mp3",
     "works.html": "../audio/works_bgm.mp3",
     "faq.html": "../audio/faq_bgm.mp3",
@@ -79,14 +79,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Make sure music plays on normal load AND back/forward cache
 window.addEventListener("pageshow", (event) => {
-    const musicAllowed = sessionStorage.getItem("musicAllowed");
-    if (musicAllowed) {
-        bgMusic.play().then(() => fadeIn(bgMusic)).catch(() => {});
+    if (event.persisted) { // page restored from bfcache
+        const musicAllowed = sessionStorage.getItem("musicAllowed");
+        if (musicAllowed) {
+            // autoplay will likely fail, so wait for click
+            const overlay = document.createElement("div");
+            overlay.style.position = "fixed";
+            overlay.style.top = 0;
+            overlay.style.left = 0;
+            overlay.style.width = "100%";
+            overlay.style.height = "100%";
+            overlay.style.zIndex = 9999;
+            overlay.style.cursor = "pointer";
+            overlay.style.background = "rgba(0,0,0,0)";
+            document.body.appendChild(overlay);
+
+            overlay.addEventListener("click", () => {
+                bgMusic.play().then(() => fadeIn(bgMusic)).catch(() => {});
+                document.body.removeChild(overlay);
+            });
+        }
     }
 });
-
-
-
 
 
 
