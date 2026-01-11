@@ -24,219 +24,250 @@
     <script defer src="../script/bgm.js"></script>
 </head>
 <body>
-    <!-- Menu Toggle Button (for mobile) -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-        <i class="bi bi-list"></i>
-    </button>
+    <div id="page-wrapper">
+        <!-- Menu Toggle Button (for mobile) -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <i class="bi bi-list"></i>
+        </button>
 
-    <!-- Sidebar Navigation -->
-    <nav class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h3><i class="bi bi-list"></i> Menu</h3>
-            <button class="close-btn" id="closeBtn" aria-label="Close menu">
-                <i class="bi bi-x-lg"></i>
-            </button>
-        </div>
-        <div class="nav-buttons">
-            <a href="../html/home_.html" class="nav-btn">
-                <i class="bi bi-house-door"></i>
-                <span>Home</span>
-            </a>
-            <a href="../html/aboutme.html" class="nav-btn">
-                <i class="bi bi-person"></i>
-                <span>About me</span>
-            </a>
-            <a href="../html/works.html" class="nav-btn active">
-                <i class="bi bi-briefcase"></i>
-                <span>Works</span>
-            </a>
-            <a href="../html/faq.html" class="nav-btn">
-                <i class="bi bi-question-circle"></i>
-                <span>FAQ</span>
-            </a>
-            <a href="../html/contacts.html" class="nav-btn">
-                <i class="bi bi-envelope"></i>
-                <span>Contacts</span>
-            </a>
-        </div>
-    </nav>
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="bi bi-list"></i> Menu</h3>
+                <button class="close-btn" id="closeBtn" aria-label="Close menu">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="nav-buttons">
+                <a href="../html/home_.html" class="nav-btn">
+                    <i class="bi bi-house-door"></i>
+                    <span>Home</span>
+                </a>
+                <a href="../html/aboutme.html" class="nav-btn">
+                    <i class="bi bi-person"></i>
+                    <span>About me</span>
+                </a>
+                <a href="../html/works.html" class="nav-btn active">
+                    <i class="bi bi-briefcase"></i>
+                    <span>Works</span>
+                </a>
+                <a href="../html/faq.html" class="nav-btn">
+                    <i class="bi bi-question-circle"></i>
+                    <span>FAQ</span>
+                </a>
+                <a href="../html/contacts.html" class="nav-btn">
+                    <i class="bi bi-envelope"></i>
+                    <span>Contacts</span>
+                </a>
+            </div>
+        </nav>
+        
+        <!-- Overlay -->
+        <div class="overlay" id="overlay"></div>
+
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header Section -->
+            <header class="game-header">
+                <h1 class="game-title">SKIBIDI INFECTION</h1>
+                <a href="https://github.com/ImSauce/Skibidi-Infection/releases/download/v0.5/Skibidi.Infection.apk"
+                class="download-btn-header">
+                    <span>Download</span>
+                    <i class="bi bi-download"></i>
+                </a>
+            </header>
+
+            <!-- Steam-style Layout Container -->
+            <div class="steam-layout">
+                <!-- Media Carousel -->
+                <section class="media-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-track" id="carouselTrack">
+                            <div class="carousel-slide featured">
+                                <video
+                                    id="featuredVideo"
+                                    src="../video/skibidi_ad.mp4"
+                                    autoplay
+                                    loop
+                                    playsinline
+                                    preload="auto"
+                                    volume="1">
+                                </video>
+
+                                <!-- Volume Control -->
+                                <div class="video-volume-control">
+                                    <input type="range" id="videoVolume" min="0" max="1" step="0.01" value="0.5">
+                                    <i class="bi bi-volume-up" id="volumeIcon"></i>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="../images/screenshots/S2.jpg" alt="Screenshot 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="../images/screenshots/S3.jpg" alt="Screenshot 3">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="../images/screenshots/S4.jpg" alt="Screenshot 4">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="../images/screenshots/S5.jpg" alt="Screenshot 5">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="../images/screenshots/S6.jpg" alt="Screenshot 6">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="../images/screenshots/S7.jpg" alt="Screenshot 7">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="../images/screenshots/S8.jpg" alt="Screenshot 8">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="../images/screenshots/S9.jpg" alt="Screenshot 9">
+                            </div>
+                        </div>
+
+                        <button class="carousel-nav prev" id="prevBtn">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <button class="carousel-nav next" id="nextBtn">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="thumbnail-strip-wrapper">
+                        <div class="thumbnail-strip">
+                            <div class="thumbnail active" data-index="0">
+                                <img src="../images/screenshots/S1.png" alt="Thumb 0">
+                            </div>
+                            <div class="thumbnail" data-index="1">
+                                <img src="../images/screenshots/S2.jpg" alt="Thumb 1">
+                            </div>
+                            <div class="thumbnail" data-index="2">
+                                <img src="../images/screenshots/S3.jpg" alt="Thumb 2">
+                            </div>
+                            <div class="thumbnail" data-index="3">
+                                <img src="../images/screenshots/S4.jpg" alt="Thumb 3">
+                            </div>
+                            <div class="thumbnail" data-index="4">
+                                <img src="../images/screenshots/S5.jpg" alt="Thumb 4">
+                            </div>
+                            <div class="thumbnail" data-index="5">
+                                <img src="../images/screenshots/S6.jpg" alt="Thumb 5">
+                            </div>
+                            <div class="thumbnail" data-index="6">
+                                <img src="../images/screenshots/S7.jpg" alt="Thumb 6">
+                            </div>
+                            <div class="thumbnail" data-index="7">
+                                <img src="../images/screenshots/S8.jpg" alt="Thumb 7">
+                            </div>
+                            <div class="thumbnail" data-index="8">
+                                <img src="../images/screenshots/S9.jpg" alt="Thumb 8">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="-extra-info-main">
+                        <div class="description-box">
+                            <h3>About This Game</h3>
+                            <p class="description">
+                                This mobile visual novel game was developed strictly for educational purposes, aiming to provide an engaging platform for young learners to explore basic grammar, science, and mathematics concepts. The application was built using the Flutter framework, enabling cross-platform compatibility and smooth interactive experiences. This project was a collaborative effort with my colleague, Tony, during my first year of college. As a student-developed prototype, users may encounter occasional bugs, which are a natural part of the iterative learning and development process.
+                            </p>
+                            <h3>Target Users</h3>
+                            <p class="description">
+                                The game is designed for children aged 9 to 14 who are developing foundational skills in English, mathematics, and science. The game combines educational content with interactive storytelling, ensuring that learning is engaging, enjoyable, and age-appropriate. Its visual novel structure and quiz-based mechanics are tailored to the cognitive abilities and interests of this age group.
+                            </p>
+                            <h3>Game Features:</h3>
+                            <p class="description">
+                                - Character Illustrations<br>
+                                - Quiz Mechanics <br>
+                                - Story Mode<br>
+                                - Challenge Mode <br>
+                                - User-Friendly UI <br>
+                                - Health System<br>
+                            </p>
+                        </div>
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- Game Info Section -->
+                <section class="game-info">
+                    <div class="info-main">
+                        <div class="description-box">
+                            <div class="about-image">
+                                <img src="../images/games/Banner2.png" alt="About WitchType">
+                            </div>
+                            <p class="description">
+                                A mobile educational visual novel game designed to engage young learners in mastering fundamental grammar, science, and mathematics through interactive gameplay.
+                            </p>
+                            <div class="detail-item">
+                                <span class="detail-label">Release Date:</span>
+                                <span class="detail-value">August 19, 2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Genre:</span>
+                                <div class="genre-tags">
+                                    <span class="tag">Visual Novel</span>
+                                    <span class="tag">Fantasy</span>
+                                    <span class="tag">2D</span>
+                                    <span class="tag">Story Rich</span>
+                                    <span class="tag">Educational</span>
+                                    <span class="tag">Single Player</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="info-sidebar">
+                        <div class="sidebar-card">
+                            <h3>System Requirments</h3>
+                            <p>
+                            Minimum: <br>
+                            OS: Android 10+ <br>
+                            Processor: Quad-core 1.8 GHz (Snapdragon 450 / Helio P22) <br>
+                            Memory: 3 GB RAM <br>
+                            Graphics: Adreno 506 / Mali-G52 <br>
+                            Storage: 300 MB <br>
+                            Screen Resolution: 720p minimum <br>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const mainContent = document.querySelector(".main-content");
+        const navButtons = document.querySelectorAll(".nav-buttons a");
+        const pageWrapper = document.getElementById("page-wrapper");
+
+        // Fade-in on load
+        setTimeout(() => {
+            mainContent.style.opacity = 1;
+        }, 50);
+
+        navButtons.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                // Fade out wrapper
+                pageWrapper.classList.add("page-exit-animation");
+
+                // Redirect after fade
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 1500);
+            });
+        });
+    });
+    </script>
     
-    <!-- Overlay -->
-    <div class="overlay" id="overlay"></div>
-
-
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Header Section -->
-        <header class="game-header">
-            <h1 class="game-title">SKIBIDI INFECTION</h1>
-            <a href="https://github.com/ImSauce/Skibidi-Infection/releases/download/v0.5/Skibidi.Infection.apk"
-            class="download-btn-header">
-                <span>Download</span>
-                <i class="bi bi-download"></i>
-            </a>
-        </header>
-
-        <!-- Steam-style Layout Container -->
-        <div class="steam-layout">
-            <!-- Media Carousel -->
-            <section class="media-carousel">
-                <div class="carousel-container">
-                    <div class="carousel-track" id="carouselTrack">
-                        <div class="carousel-slide featured">
-                            <video
-                                id="featuredVideo"
-                                src="../video/skibidi_ad.mp4"
-                                autoplay
-                                loop
-                                playsinline
-                                preload="auto"
-                                volume="1">
-                            </video>
-
-                            <!-- Volume Control -->
-                            <div class="video-volume-control">
-                                <input type="range" id="videoVolume" min="0" max="1" step="0.01" value="0.5">
-                                <i class="bi bi-volume-up" id="volumeIcon"></i>
-                            </div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../images/screenshots/S2.jpg" alt="Screenshot 2">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../images/screenshots/S3.jpg" alt="Screenshot 3">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../images/screenshots/S4.jpg" alt="Screenshot 4">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../images/screenshots/S5.jpg" alt="Screenshot 5">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../images/screenshots/S6.jpg" alt="Screenshot 6">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../images/screenshots/S7.jpg" alt="Screenshot 7">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../images/screenshots/S8.jpg" alt="Screenshot 8">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../images/screenshots/S9.jpg" alt="Screenshot 9">
-                        </div>
-                    </div>
-
-                    <button class="carousel-nav prev" id="prevBtn">
-                        <i class="bi bi-chevron-left"></i>
-                    </button>
-                    <button class="carousel-nav next" id="nextBtn">
-                        <i class="bi bi-chevron-right"></i>
-                    </button>
-                </div>
-
-                <div class="thumbnail-strip-wrapper">
-                    <div class="thumbnail-strip">
-                        <div class="thumbnail active" data-index="0">
-                            <img src="../images/screenshots/S1.png" alt="Thumb 0">
-                        </div>
-                        <div class="thumbnail" data-index="1">
-                            <img src="../images/screenshots/S2.jpg" alt="Thumb 1">
-                        </div>
-                        <div class="thumbnail" data-index="2">
-                            <img src="../images/screenshots/S3.jpg" alt="Thumb 2">
-                        </div>
-                        <div class="thumbnail" data-index="3">
-                            <img src="../images/screenshots/S4.jpg" alt="Thumb 3">
-                        </div>
-                        <div class="thumbnail" data-index="4">
-                            <img src="../images/screenshots/S5.jpg" alt="Thumb 4">
-                        </div>
-                        <div class="thumbnail" data-index="5">
-                            <img src="../images/screenshots/S6.jpg" alt="Thumb 5">
-                        </div>
-                        <div class="thumbnail" data-index="6">
-                            <img src="../images/screenshots/S7.jpg" alt="Thumb 6">
-                        </div>
-                        <div class="thumbnail" data-index="7">
-                            <img src="../images/screenshots/S8.jpg" alt="Thumb 7">
-                        </div>
-                        <div class="thumbnail" data-index="8">
-                            <img src="../images/screenshots/S9.jpg" alt="Thumb 8">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="-extra-info-main">
-                    <div class="description-box">
-                        <h3>About This Game</h3>
-                        <p class="description">
-                            This mobile visual novel game was developed strictly for educational purposes, aiming to provide an engaging platform for young learners to explore basic grammar, science, and mathematics concepts. The application was built using the Flutter framework, enabling cross-platform compatibility and smooth interactive experiences. This project was a collaborative effort with my colleague, Tony, during my first year of college. As a student-developed prototype, users may encounter occasional bugs, which are a natural part of the iterative learning and development process.
-                        </p>
-                        <h3>Target Users</h3>
-                        <p class="description">
-                            The game is designed for children aged 9 to 14 who are developing foundational skills in English, mathematics, and science. The game combines educational content with interactive storytelling, ensuring that learning is engaging, enjoyable, and age-appropriate. Its visual novel structure and quiz-based mechanics are tailored to the cognitive abilities and interests of this age group.
-                        </p>
-                        <h3>Game Features:</h3>
-                        <p class="description">
-                            - Character Illustrations<br>
-                            - Quiz Mechanics <br>
-                            - Story Mode<br>
-                            - Challenge Mode <br>
-                            - User-Friendly UI <br>
-                            - Health System<br>
-                        </p>
-                    </div>
-                </div>
-
-
-            </section>
-
-
-
-            <!-- Game Info Section -->
-            <section class="game-info">
-                <div class="info-main">
-                    <div class="description-box">
-                        <div class="about-image">
-                            <img src="../images/games/Banner2.png" alt="About WitchType">
-                        </div>
-                        <p class="description">
-                            A mobile educational visual novel game designed to engage young learners in mastering fundamental grammar, science, and mathematics through interactive gameplay.
-                        </p>
-                        <div class="detail-item">
-                            <span class="detail-label">Release Date:</span>
-                            <span class="detail-value">August 19, 2025</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Genre:</span>
-                            <div class="genre-tags">
-                                <span class="tag">Visual Novel</span>
-                                <span class="tag">Fantasy</span>
-                                <span class="tag">2D</span>
-                                <span class="tag">Story Rich</span>
-                                <span class="tag">Educational</span>
-                                <span class="tag">Single Player</span>
-                            </div>
-                        </div>
-                    </div>
-
-                <div class="info-sidebar">
-                    <div class="sidebar-card">
-                        <h3>System Requirments</h3>
-                        <p>
-                        Minimum: <br>
-                        OS: Android 10+ <br>
-                        Processor: Quad-core 1.8 GHz (Snapdragon 450 / Helio P22) <br>
-                        Memory: 3 GB RAM <br>
-                        Graphics: Adreno 506 / Mali-G52 <br>
-                        Storage: 300 MB <br>
-                        Screen Resolution: 720p minimum <br>
-                        </p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
+    
 </body>
 </html>

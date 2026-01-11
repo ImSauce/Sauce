@@ -39,6 +39,7 @@ body {
     caret-color: transparent;
 }
 
+
 .main-content {
     opacity: 0;
     transition: opacity 0.8s ease-in-out;

@@ -5,6 +5,7 @@ const pageMusic = {
     "faq.html": "../audio/faq_bgm.mp3",
     "contacts.html": "../audio/contacts_bgm.mp3",
     "home_.html": "../audio/home_bgm.mp3",
+    "thanks.html": "../audio/thanks_bgm.mp3",
 };
 
 // detect current page
@@ -17,7 +18,7 @@ bgMusic.loop = true;
 bgMusic.volume = 0; // start at 0 for fade in
 
 // fade in function
-function fadeIn(audio, targetVolume = 0.2, duration = 3000) {
+function fadeIn(audio, targetVolume = 0.2, duration = 2000) {
     const stepTime = 50;
     const steps = duration / stepTime;
     const volumeStep = targetVolume / steps;

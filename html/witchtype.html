@@ -24,220 +24,256 @@
 
 </head>
 <body>
-    <!-- Menu Toggle Button (for mobile) -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-        <i class="bi bi-list"></i>
-    </button>
+    <div id="page-wrapper">
+        <!-- Menu Toggle Button (for mobile) -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <i class="bi bi-list"></i>
+        </button>
 
-    <!-- Sidebar Navigation -->
-    <nav class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h3><i class="bi bi-list"></i> Menu</h3>
-            <button class="close-btn" id="closeBtn" aria-label="Close menu">
-                <i class="bi bi-x-lg"></i>
-            </button>
-        </div>
-        <div class="nav-buttons">
-            <a href="../html/home_.html" class="nav-btn">
-                <i class="bi bi-house-door"></i>
-                <span>Home</span>
-            </a>
-            <a href="../html/aboutme.html" class="nav-btn">
-                <i class="bi bi-person"></i>
-                <span>About me</span>
-            </a>
-            <a href="../html/works.html" class="nav-btn active">
-                <i class="bi bi-briefcase"></i>
-                <span>Works</span>
-            </a>
-            <a href="../html/faq.html" class="nav-btn">
-                <i class="bi bi-question-circle"></i>
-                <span>FAQ</span>
-            </a>
-            <a href="../html/contacts.html" class="nav-btn">
-                <i class="bi bi-envelope"></i>
-                <span>Contacts</span>
-            </a>
-        </div>
-    </nav>
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3><i class="bi bi-list"></i> Menu</h3>
+                <button class="close-btn" id="closeBtn" aria-label="Close menu">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="nav-buttons">
+                <a href="../html/home_.html" class="nav-btn">
+                    <i class="bi bi-house-door"></i>
+                    <span>Home</span>
+                </a>
+                <a href="../html/aboutme.html" class="nav-btn">
+                    <i class="bi bi-person"></i>
+                    <span>About me</span>
+                </a>
+                <a href="../html/works.html" class="nav-btn active">
+                    <i class="bi bi-briefcase"></i>
+                    <span>Works</span>
+                </a>
+                <a href="../html/faq.html" class="nav-btn">
+                    <i class="bi bi-question-circle"></i>
+                    <span>FAQ</span>
+                </a>
+                <a href="../html/contacts.html" class="nav-btn">
+                    <i class="bi bi-envelope"></i>
+                    <span>Contacts</span>
+                </a>
+            </div>
+        </nav>
+        
+        <!-- Overlay -->
+        <div class="overlay" id="overlay"></div>
+
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header Section -->
+            <header class="game-header">
+                <h1 class="game-title">WITCHTYPE: The Ashen Witch</h1>
+                <a href="https://github.com/ImSauce/WitchType/releases/download/0.7.2-beta/WitchType.v0.7.2-windows.zip"
+                class="download-btn-header">
+                    <span>Download</span>
+                    <i class="bi bi-download"></i>
+                </a>
+            </header>
+
+            <!-- Steam-style Layout Container -->
+            <div class="steam-layout">
+                <!-- Media Carousel -->
+                <section class="media-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-track" id="carouselTrack">
+                            <div class="carousel-slide featured">
+                                <video
+                                    id="featuredVideo"
+                                    src="../video/witchtype_ad.mp4"
+                                    autoplay
+                                    loop
+                                    playsinline
+                                    preload="auto"
+                                    volume="1">
+                                </video>
+
+                                <!-- Volume Control -->
+                                <div class="video-volume-control">
+                                    <input type="range" id="videoVolume" min="0" max="1" step="0.01" value="0.5">
+                                    <i class="bi bi-volume-up" id="volumeIcon"></i>
+                                </div>
+                            </div>
+
+                            <div class="carousel-slide">
+                                <img src="../images/screenshots/W1.png" alt="Screenshot 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="../images/screenshots/W2.png" alt="Screenshot 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="../images/screenshots/W3.png" alt="Screenshot 3">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="../images/screenshots/W4.png" alt="Screenshot 4">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="../images/screenshots/W5.png" alt="Screenshot 5">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="../images/screenshots/W6.png" alt="Screenshot 6">
+                            </div>
+                        </div>
+
+                        <button class="carousel-nav prev" id="prevBtn">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <button class="carousel-nav next" id="nextBtn">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <div class="thumbnail-strip-wrapper">
+                        <div class="thumbnail-strip">
+                            <div class="thumbnail active" data-index="0">
+                                <img src="../images/screenshots/W7.png" alt="Thumb 0">
+                            </div>
+                            <div class="thumbnail" data-index="1">
+                                <img src="../images/screenshots/W1.png" alt="Thumb 1">
+                            </div>
+                            <div class="thumbnail" data-index="2">
+                                <img src="../images/screenshots/W2.png" alt="Thumb 2">
+                            </div>
+                            <div class="thumbnail" data-index="3">
+                                <img src="../images/screenshots/W3.png" alt="Thumb 3">
+                            </div>
+                            <div class="thumbnail" data-index="4">
+                                <img src="../images/screenshots/W4.png" alt="Thumb 4">
+                            </div>
+                            <div class="thumbnail" data-index="5">
+                                <img src="../images/screenshots/W5.png" alt="Thumb 5">
+                            </div>
+                            <div class="thumbnail" data-index="6">
+                                <img src="../images/screenshots/W6.png" alt="Thumb 6">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="-extra-info-main">
+                        <div class="description-box">
+                            <h3>About This Game</h3>
+                            <p class="description">
+                                This is a single player story based typing game where the player will play as Yumi Everrete known as the Ashen Witch. The game was developed using Unity 2D and will follow the character in her journey to escape the dungeon and find her missing twin sister who got corrupted by the book of darkness and prevent her sister from unleashing the chaos of calamity.
+                            </p>
+                            <p class="description">
+                                WitchType is my most latest creation in collaboration with my friends Tony and Aoi using the Unity game engine. It’s a story based game where the player will play as Yumi Everrete known as the Ashen Witch. In her journey to escape the dungeon and find her missing twin sister who got corrupted by the book of darkness and prevent her from unleashing the chaos of calamity.
+
+                                <br><br>As players progress through the story, enemies become tougher and require longer or more complex words to defeat, pushing the player’s typing speed and accuracy to new limits.
+                                The game combines the skill-building focus of Monkeytype, the magical action of Mage Arena, and the typing-based combat of Typing of the Dead, creating a unique mix of learning, adventure, and fantasy action.
+                                The game is all about improving your typing while enjoying a fun fantasy adventure. Each chapter has new challenges, strong enemies and exciting fights to test your typing skills.
+
+                            </p>
+                            <h3>Target Users</h3>
+                            <p class="description">
+                                Witchtype is made for people who want to improve their typing skills while having fun. It’s great for students and young learners who want to get better at typing in a cool and exciting way. It also works for casual gamers who enjoy fantasy stories and mobile games, and for competitive players who like fast-paced challenges and want to test how fast they can type.
+                                The game starts off easy, so beginners won’t feel overwhelmed. But as you go through each chapter, it gets harder and more intense, which makes it fun for advanced players too. Whether you're just playing to relax or trying to beat your typing record, Witchtype gives you a fun and challenging experience.
+                            </p>
+                            <h3>Game Features:</h3>
+                            <p class="description">
+                                - Typing Based Spell Casting<br>
+                                - Map Exploration <br>
+                                - Interactable NPC<br>
+                                - Boss Battles <br>
+                                - Health and Mana System <br>
+                                - Visual Novel Style Dialogues<br>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Game Info Section -->
+                <section class="game-info">
+                    <div class="info-main">
+                        <div class="description-box">
+                            <div class="about-image">
+                                <img src="../images/games/Banner1.png" alt="About WitchType">
+                            </div>
+                            <p class="description">
+                                WitchType is a 2D top-down pixel game for PC, mixing the action-adventure and keyboard typing mechanics into a fun interactive story based adventure gameplay.
+                            </p>
+                            <div class="detail-item">
+                                <span class="detail-label">Release Date:</span>
+                                <span class="detail-value">November 27, 2025</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Genre:</span>
+                                <div class="genre-tags">
+                                    <span class="tag">Action</span>
+                                    <span class="tag">Adventure</span>
+                                    <span class="tag">Fantasy</span>
+                                    <span class="tag">2D</span>
+                                    <span class="tag">RPG</span>
+                                    <span class="tag">Story</span>
+                                    <span class="tag">Typing Game</span>
+                                    <span class="tag">Single Player</span>
+                                    <span class="tag">Early Access</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                    <div class="info-sidebar">
+                        <div class="sidebar-card">
+                            <h3>System Requirments</h3>
+                            <p>
+                                Minimum: <br>
+                                OS: Windows 10 <br>
+                                Processor: Intel Core i3 - 540 3.06 GHz <br>
+                                Memory: 8 GB RAM <br>
+                                Graphics: Intel(R) UHD Graphics 630 <br>
+                                Storage: 800 MB available space <br>
+                                Input: Keyboard required  <br>
+                                Sound Card: Windows Compatible Audio Device <br>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+
+    </div>
     
-    <!-- Overlay -->
-    <div class="overlay" id="overlay"></div>
 
 
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Header Section -->
-        <header class="game-header">
-            <h1 class="game-title">WITCHTYPE: The Ashen Witch</h1>
-            <a href="https://github.com/ImSauce/WitchType/releases/download/0.7.2-beta/WitchType.v0.7.2-windows.zip"
-            class="download-btn-header">
-                <span>Download</span>
-                <i class="bi bi-download"></i>
-            </a>
-        </header>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const mainContent = document.querySelector(".main-content");
+        const navButtons = document.querySelectorAll(".nav-buttons a");
+        const pageWrapper = document.getElementById("page-wrapper");
 
-        <!-- Steam-style Layout Container -->
-        <div class="steam-layout">
-            <!-- Media Carousel -->
-            <section class="media-carousel">
-                <div class="carousel-container">
-                    <div class="carousel-track" id="carouselTrack">
-                        <div class="carousel-slide featured">
-                            <video
-                                id="featuredVideo"
-                                src="../video/witchtype_ad.mp4"
-                                autoplay
-                                loop
-                                playsinline
-                                preload="auto"
-                                volume="1">
-                            </video>
+        // Fade-in on load
+        setTimeout(() => {
+            mainContent.style.opacity = 1;
+        }, 50);
 
-                            <!-- Volume Control -->
-                            <div class="video-volume-control">
-                                <input type="range" id="videoVolume" min="0" max="1" step="0.01" value="0.5">
-                                <i class="bi bi-volume-up" id="volumeIcon"></i>
-                            </div>
-                        </div>
+        navButtons.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
 
-                        <div class="carousel-slide">
-                            <img src="../images/screenshots/W1.png" alt="Screenshot 1">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../images/screenshots/W2.png" alt="Screenshot 2">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../images/screenshots/W3.png" alt="Screenshot 3">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../images/screenshots/W4.png" alt="Screenshot 4">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../images/screenshots/W5.png" alt="Screenshot 5">
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="../images/screenshots/W6.png" alt="Screenshot 6">
-                        </div>
-                    </div>
+                // Fade out wrapper
+                pageWrapper.classList.add("page-exit-animation");
 
-                    <button class="carousel-nav prev" id="prevBtn">
-                        <i class="bi bi-chevron-left"></i>
-                    </button>
-                    <button class="carousel-nav next" id="nextBtn">
-                        <i class="bi bi-chevron-right"></i>
-                    </button>
-                </div>
+                // Redirect after fade
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 1500);
+            });
+        });
+    });
+    </script>
 
-                <div class="thumbnail-strip-wrapper">
-                    <div class="thumbnail-strip">
-                        <div class="thumbnail active" data-index="0">
-                            <img src="../images/screenshots/W7.png" alt="Thumb 0">
-                        </div>
-                        <div class="thumbnail" data-index="1">
-                            <img src="../images/screenshots/W1.png" alt="Thumb 1">
-                        </div>
-                        <div class="thumbnail" data-index="2">
-                            <img src="../images/screenshots/W2.png" alt="Thumb 2">
-                        </div>
-                        <div class="thumbnail" data-index="3">
-                            <img src="../images/screenshots/W3.png" alt="Thumb 3">
-                        </div>
-                        <div class="thumbnail" data-index="4">
-                            <img src="../images/screenshots/W4.png" alt="Thumb 4">
-                        </div>
-                        <div class="thumbnail" data-index="5">
-                            <img src="../images/screenshots/W5.png" alt="Thumb 5">
-                        </div>
-                        <div class="thumbnail" data-index="6">
-                            <img src="../images/screenshots/W6.png" alt="Thumb 6">
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="-extra-info-main">
-                    <div class="description-box">
-                        <h3>About This Game</h3>
-                        <p class="description">
-                            This is a single player story based typing game where the player will play as Yumi Everrete known as the Ashen Witch. The game was developed using Unity 2D and will follow the character in her journey to escape the dungeon and find her missing twin sister who got corrupted by the book of darkness and prevent her sister from unleashing the chaos of calamity.
-                        </p>
-                        <p class="description">
-                            WitchType is my most latest creation in collaboration with my friends Tony and Aoi using the Unity game engine. It’s a story based game where the player will play as Yumi Everrete known as the Ashen Witch. In her journey to escape the dungeon and find her missing twin sister who got corrupted by the book of darkness and prevent her from unleashing the chaos of calamity.
-
-                            <br><br>As players progress through the story, enemies become tougher and require longer or more complex words to defeat, pushing the player’s typing speed and accuracy to new limits.
-                            The game combines the skill-building focus of Monkeytype, the magical action of Mage Arena, and the typing-based combat of Typing of the Dead, creating a unique mix of learning, adventure, and fantasy action.
-                            The game is all about improving your typing while enjoying a fun fantasy adventure. Each chapter has new challenges, strong enemies and exciting fights to test your typing skills.
-
-                        </p>
-                        <h3>Target Users</h3>
-                        <p class="description">
-                            Witchtype is made for people who want to improve their typing skills while having fun. It’s great for students and young learners who want to get better at typing in a cool and exciting way. It also works for casual gamers who enjoy fantasy stories and mobile games, and for competitive players who like fast-paced challenges and want to test how fast they can type.
-                            The game starts off easy, so beginners won’t feel overwhelmed. But as you go through each chapter, it gets harder and more intense, which makes it fun for advanced players too. Whether you're just playing to relax or trying to beat your typing record, Witchtype gives you a fun and challenging experience.
-                        </p>
-                        <h3>Game Features:</h3>
-                        <p class="description">
-                            - Typing Based Spell Casting<br>
-                            - Map Exploration <br>
-                            - Interactable NPC<br>
-                            - Boss Battles <br>
-                            - Health and Mana System <br>
-                            - Visual Novel Style Dialogues<br>
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Game Info Section -->
-            <section class="game-info">
-                <div class="info-main">
-                    <div class="description-box">
-                        <div class="about-image">
-                            <img src="../images/games/Banner1.png" alt="About WitchType">
-                        </div>
-                        <p class="description">
-                            WitchType is a 2D top-down pixel game for PC, mixing the action-adventure and keyboard typing mechanics into a fun interactive story based adventure gameplay.
-                        </p>
-                        <div class="detail-item">
-                            <span class="detail-label">Release Date:</span>
-                            <span class="detail-value">November 27, 2025</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Genre:</span>
-                            <div class="genre-tags">
-                                <span class="tag">Action</span>
-                                <span class="tag">Adventure</span>
-                                <span class="tag">Fantasy</span>
-                                <span class="tag">2D</span>
-                                <span class="tag">RPG</span>
-                                <span class="tag">Story</span>
-                                <span class="tag">Typing Game</span>
-                                <span class="tag">Single Player</span>
-                                <span class="tag">Early Access</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    
-
-                <div class="info-sidebar">
-                    <div class="sidebar-card">
-                        <h3>System Requirments</h3>
-                        <p>
-                            Minimum: <br>
-                            OS: Windows 10 <br>
-                            Processor: Intel Core i3 - 540 3.06 GHz <br>
-                            Memory: 8 GB RAM <br>
-                            Graphics: Intel(R) UHD Graphics 630 <br>
-                            Storage: 800 MB available space <br>
-                            Input: Keyboard required  <br>
-                            Sound Card: Windows Compatible Audio Device <br>
-                        </p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
+    
 </body>
 </html>

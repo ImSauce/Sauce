@@ -25,6 +25,34 @@
 </head>
 
 <body>
+    <div id="page-wrapper">
+        <!-- Main Content -->
+        <div class="main-content">
+            <h1 class="title">Your Message has been <span class="name">Received🍵</span></h1>
+            <h2 class="subtitle">Thank you for contacting me!</h2>
+
+            <div class="nav-buttons">
+                <a href="../html/home_.html"><button class="nav-btn">Back to Home</button></a>
+            </div>
+
+        </div>
+
+
+
+        <!-- Wave Animation -->
+        <svg class="wave" viewBox="0 0 2 1" preserveAspectRatio="none">
+            <defs>
+                <path id="w" d="m0 1v-.5 q.5.5 1 0 t1 0 1 0 1 0 v.5z" />
+            </defs>
+            <g>
+                <use href="#w" y=".0" fill="#41ce5c" />
+                <use href="#w" y=".1" fill="#4BCD79" />
+                <use href="#w" y=".2" fill="#94FF7C" />
+            </g>
+        </svg>
+
+
+    </div>
 
     <div class="loader_wrapper preload">
         <svg class="wave wave-loader" viewBox="0 0 2 1" preserveAspectRatio="none">
@@ -39,30 +67,37 @@
         </svg>
     </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <h1 class="title">Your Message has been <span class="name">Received🍵</span></h1>
-        <h2 class="subtitle">Thank you for contacting me!</h2>
-
-        <div class="nav-buttons">
-            <a href="../html/home_.html"><button class="nav-btn">Back to Home</button></a>
-        </div>
-
-    </div>
 
 
 
-    <!-- Wave Animation -->
-    <svg class="wave" viewBox="0 0 2 1" preserveAspectRatio="none">
-        <defs>
-            <path id="w" d="m0 1v-.5 q.5.5 1 0 t1 0 1 0 1 0 v.5z" />
-        </defs>
-        <g>
-            <use href="#w" y=".0" fill="#41ce5c" />
-            <use href="#w" y=".1" fill="#4BCD79" />
-            <use href="#w" y=".2" fill="#94FF7C" />
-        </g>
-    </svg>
+        <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const mainContent = document.querySelector(".main-content");
+        const navButtons = document.querySelectorAll(".nav-buttons a");
+        const pageWrapper = document.getElementById("page-wrapper");
+
+        // Fade-in on load
+        setTimeout(() => {
+            mainContent.style.opacity = 1;
+        }, 50);
+
+        navButtons.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                // Fade out wrapper
+                pageWrapper.classList.add("page-exit-animation");
+
+                // Redirect after fade
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 1500);
+            });
+        });
+    });
+    </script>
+
+    
 </body>
 </html>
 
