@@ -220,6 +220,16 @@
                 });
             });
         });
+
+        window.addEventListener("pageshow", (event) => {
+    const mainContent = document.querySelector(".main-content");
+
+    // If page was restored from bfcache
+    if (event.persisted) {
+        document.body.classList.remove("page-exit-animation");
+        mainContent.style.opacity = "1";
+    }
+});
     </script>
 
 
