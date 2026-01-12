@@ -1,5 +1,5 @@
 const pageMusic = {
-    "home.html": "home_bgm.mp3",   // main page BGM
+    "home.html": "home_bgm.mp3",
     "home_.html": "../audio/home_bgm.mp3",
     "aboutme.html": "../audio/aboutme_bgm.mp3",
     "works.html": "../audio/works_bgm.mp3",
@@ -78,62 +78,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Make sure music plays on normal load AND back/forward cache
+// SINGLE pageshow handler - handles BOTH music AND fade-in fix
 window.addEventListener("pageshow", (event) => {
     if (event.persisted) { // page restored from bfcache
-        const musicAllowed = sessionStorage.getItem("musicAllowed");
-        if (musicAllowed) {
-            // autoplay will likely fail, so wait for click
-            const overlay = document.createElement("div");
-            overlay.style.position = "fixed";
-            overlay.style.top = 0;
-            overlay.style.left = 0;
-            overlay.style.width = "100%";
-            overlay.style.height = "100%";
-            overlay.style.zIndex = 9999;
-            overlay.style.cursor = "pointer";
-            overlay.style.background = "rgba(0,0,0,0)";
-            document.body.appendChild(overlay);
-
-            overlay.addEventListener("click", () => {
-                bgMusic.play().then(() => fadeIn(bgMusic)).catch(() => {});
-                document.body.removeChild(overlay);
-            });
-        }
-    }
-});
-
-
-// ======================
-// Handle Back Button (bfcache) fix
-// ======================
-window.addEventListener("pageshow", (event) => {
-    if (event.persisted) {
+        // Remove page-exit-animation class
+        document.body.classList.remove("page-exit-animation");
+        
+        // Show main content
         const mainContent = document.querySelector(".main-content");
-        const overlay = document.getElementById("click-overlay");
-
-        // Make main content visible
         if (mainContent) {
-            mainContent.style.opacity = 1;
+            mainContent.classList.add("show");
         }
 
-        // Remove overlay if it exists
-        if (overlay) {
-            overlay.remove();
-        }
-
-        // Play music if allowed
+        // Handle music
         const musicAllowed = sessionStorage.getItem("musicAllowed");
         if (musicAllowed && bgMusic.paused) {
             bgMusic.play().then(() => fadeIn(bgMusic)).catch(() => {});
         }
     }
 });
-
-
-
-
-
 
 // ======================
 // SFX SYSTEM
@@ -172,11 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
             playSFX(el.dataset.sfxClick, parseFloat(el.dataset.sfxVolume) || 0.5);
         });
     });
-
 });
-
-
-
 
 
 

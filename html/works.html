@@ -25,7 +25,7 @@
 <body>
 
         <!-- Menu Toggle Button -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" data-sfx-click="../audio/menu_toggle_open_sfx.mp3">
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" data-sfx-click="../audio/menu_toggle_open_sfx.mp3" data-sfx-hover="../audio/hover_sfx.mp3">
         <i class="bi bi-list"></i>
     </button>
     
@@ -33,7 +33,7 @@
     <nav class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <h3><i class="bi bi-list"></i> Menu</h3>
-            <button class="close-btn" id="closeBtn" aria-label="Close menu" data-sfx-click="../audio/menu_toggle_close_sfx.mp3">
+            <button class="close-btn" id="closeBtn" aria-label="Close menu" data-sfx-click="../audio/menu_toggle_close_sfx.mp3" data-sfx-hover="../audio/hover_sfx.mp3">
                 <i class="bi bi-x-lg"></i>
             </button>
         </div>
@@ -246,9 +246,11 @@
 <script>
 function showContent() {
     const mainContent = document.querySelector(".main-content");
-    if (mainContent) {
-        mainContent.classList.add("show");
-    }
+    if (!mainContent) return;
+
+    mainContent.classList.remove("show");
+    void mainContent.offsetHeight; // 🔥 force reflow
+    mainContent.classList.add("show");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
